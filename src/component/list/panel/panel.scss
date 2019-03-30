@@ -1,0 +1,51 @@
+.panel{
+  li{
+    list-style:none;
+  }
+
+  .row{
+    background: #FFFFFF;
+    color:#666666;
+    font-size: 24px;
+    padding: 28px 0 28px 40px;
+    height: 144px;
+    margin-bottom: 20px;
+
+
+    .name{
+      font-size: 32px;
+      color:#101010;
+    }
+
+    .info{
+      margin-top: 14px;
+
+      .country{
+        float:left;
+      }
+
+      .separate{
+        float:left;
+        margin-left: 20px;
+      }
+
+      .type{
+        float:left;
+        margin-left: 20px;
+      }
+    }
+
+    .number{
+      float:left;
+      margin-top: 8px;
+      font-size: 24px;
+    }
+
+    .count{
+      float:left;
+      margin-top: 8px;
+      font-size: 24px;
+    }
+
+  }
+}

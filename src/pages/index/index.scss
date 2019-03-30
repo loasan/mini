@@ -1,0 +1,28 @@
+.index{
+
+  .introduce{
+    margin-top: 112px;
+    font-size: 32px;
+    text-align:center;
+  }
+
+  .search{
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-top: 108px;
+    padding:18px 20px 18px 20px;
+    font-size: 28px;
+    color: #999999;
+    background: #FFFFFF;
+    border-radius: 6px;
+
+    .tips{
+      margin-left: 28px;
+    }
+
+    .camera{
+      line-height: 46px;
+      float: right;
+    }
+  }
+}
