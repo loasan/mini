@@ -1,11 +1,12 @@
 import Taro, { Component } from '@tarojs/taro'
 import { View, Input , Text} from '@tarojs/components'
-import "./panel.scss"
+import "./list_panel.scss"
 
 
-export class Panel extends Component{
-  constructor(prop){
-    super(prop);
+export class List_panel extends Component{
+  constructor(props){
+    super(props);
+
     this.state={
       data: this.props.data
     }
@@ -14,7 +15,7 @@ export class Panel extends Component{
 
   render() {
     return (
-      <View className='panel'>
+      <View className='list_panel'>
         <ul>
           {
             this.state.data.map((item) => {

@@ -1,10 +1,11 @@
 import Taro, {Component} from '@tarojs/taro'
-import {SearchInput} from "../../component/list/search/search";
-import {Tip} from "../../component/list/tip/tip";
-import {Panel} from "../../component/list/panel/panel";
 import {View} from '@tarojs/components'
+import {List_searchinput} from "../../component/list/list_searchinput/list_searchinput";
+import {List_tip} from "../../component/list/list_tip/list_tip";
+import {List_panel} from "../../component/list/list_panel/list_panel";
 
-class Index extends Component {
+
+class List extends Component {
 
   config = {
     navigationBarTitleText: '商情发现'
@@ -53,16 +54,16 @@ class Index extends Component {
   render() {
     return (
       <View>
-        <View><SearchInput value={this.state.value}/></View>
-        <View><Tip data={this.state.list}/></View>
-        <View><Panel data={this.state.list}/></View>
+        <View><List_searchinput value={this.state.value}/></View>
+        <View><List_tip data={this.state.list}/></View>
+        <View><List_panel data={this.state.list}/></View>
       </View>
 
     )
   }
 }
 
-export default Index
+export default List
 
 // <View className='list'>
 //         <View className='head'>

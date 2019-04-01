@@ -1,8 +1,8 @@
 import Taro, { Component } from '@tarojs/taro'
 import { View, Text } from '@tarojs/components'
-import "./tip.scss"
+import "./list_tip.scss"
 
-export class Tip extends Component{
+export class List_tip extends Component{
   constructor(prop){
     super(prop);
     this.state={
@@ -13,7 +13,7 @@ export class Tip extends Component{
 
   render () {
     return (
-      <View className='tip'><Text>搜索到{this.state.count}家公司</Text></View>
+      <View className='list_tip'><Text>搜索到{this.state.count}家公司</Text></View>
     )
   }
 }

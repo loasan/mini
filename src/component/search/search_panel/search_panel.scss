@@ -1,0 +1,26 @@
+.search_panel {
+  background: #FFFFFF;
+
+  .row {
+    font-size: 28px;
+    color: #666666;
+    padding: 24px 0 24px 20px;
+    height: 42px;
+
+    .icon_clock {
+      float: left;
+    }
+
+    .list {
+      float: left;
+      margin-left: 20px;
+    }
+    }
+  .line2{
+    height: 2px;
+    border: none;
+    background-color: #EFEFEF;
+    margin-left: 20px;
+    margin-right: 20px;
+  }
+}

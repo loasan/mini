@@ -1,8 +1,8 @@
 import Taro, { Component } from '@tarojs/taro'
 import { View, Input } from '@tarojs/components'
-import "./search.scss"
+import "./list_searchinput.scss"
 
-export class SearchInput extends Component{
+export class List_searchinput extends Component{
   constructor(prop){
     super(prop);
     this.state={
@@ -12,7 +12,7 @@ export class SearchInput extends Component{
 
   render () {
     return (
-      <View className='searchInput'>
+      <View className='list_searchInput'>
         <View className='shade'>
           <View className='icon-search'>
             <View className='at-icon at-icon-search' />
