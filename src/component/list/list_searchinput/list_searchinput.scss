@@ -1,0 +1,22 @@
+.list_searchInput{
+  background: #FFFFFF;
+  padding: 20px;
+
+  .shade {
+    background: #EFEFEF;
+    padding: 10px 20px 10px 20px;
+    font-size: 28px;
+    color: #999999;
+
+    .icon-search {
+      float: left;
+    }
+
+    .input {
+      width: 580px;
+      float: left;
+      margin-left: 20px;
+      color: #333333;
+    }
+  }
+}
