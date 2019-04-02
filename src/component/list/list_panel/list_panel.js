@@ -12,6 +12,9 @@ export class List_panel extends Component{
     }
   }
 
+  skipToDetail(){
+    Taro.navigateTo({url: '../detail/detail'});
+  }
 
   render() {
     return (
@@ -21,7 +24,7 @@ export class List_panel extends Component{
             this.state.data.map((item) => {
               return (
                 <li>
-                  <View className='row'>
+                  <View className='row' onClick={this.skipToDetail.bind(this)}>
                     <Text className='name'>{item.name}</Text>
                     <View className='info'>
                       <View className='country'><Text>{item.country}</Text></View>

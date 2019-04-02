@@ -1,8 +1,9 @@
 import '@tarojs/async-await'
 import Taro, { Component } from '@tarojs/taro'
 import { Provider } from '@tarojs/redux'
-import 'taro-ui/dist/style/index.scss'
 
+import 'taro-ui/dist/style/index.scss'
+import './icon.scss'
 import Index from './pages/index'
 
 import configStore from './store'
@@ -23,7 +24,8 @@ class App extends Component {
     pages: [
       'pages/index/index',
       'pages/search/search',
-      'pages/list/list'
+      'pages/list/list',
+      'pages/detail/detail'
     ],
     window: {
       backgroundTextStyle: 'light',
