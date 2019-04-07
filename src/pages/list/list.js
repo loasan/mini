@@ -14,20 +14,17 @@ class List extends Component {
 
   constructor(prop) {
     super(prop);
-    // this.state = {
-    //   list: []
-    // }
+    this.state = {
+      list: []
+    }
   }
 
   componentWillMount() {
-    console.log(this.$router.params); // 输出 { value: value }
-    const data = new company_server.get_list();
     this.setState(
-      {
-        value: this.$router.params.value,
-        list: data
-      }
-    )
+      {value: this.$router.params.value}
+    );
+
+    company_server.get_list(this.onGetServerData.bind(this));
   }
 
   componentWillReceiveProps(nextProps) {
@@ -48,6 +45,14 @@ class List extends Component {
   componentDidHide() {
   }
 
+  onGetServerData(data){
+    this.setState(
+      {
+        list: data,
+      }
+    );
+  }
+
   render() {
     return (
       <View>
@@ -55,7 +60,6 @@ class List extends Component {
         <View><List_tip data={this.state.list} /></View>
         <View><List_panel data={this.state.list} /></View>
       </View>
-
     )
   }
 }
