@@ -3,6 +3,7 @@ import {View} from '@tarojs/components'
 import {List_searchinput} from "../../component/list/list_searchinput/list_searchinput";
 import {List_tip} from "../../component/list/list_tip/list_tip";
 import {List_panel} from "../../component/list/list_panel/list_panel";
+import {company_server} from "../../service/company";
 
 
 class List extends Component {
@@ -20,11 +21,7 @@ class List extends Component {
 
   componentWillMount() {
     console.log(this.$router.params); // 输出 { value: value }
-    const data = [
-      {name: 'AMERICAN LIGHTING INC', country: '美国', buyer_number: 15, mate_number: 83},
-      {name: 'BBBBBBB', country: '英国', buyer_number: 5, mate_number: 25},
-      {name: 'BBBBBBB', country: '英国', buyer_number: 5, mate_number: 25}
-    ];
+    const data = new company_server.get_list();
     this.setState(
       {
         value: this.$router.params.value,
@@ -54,9 +51,9 @@ class List extends Component {
   render() {
     return (
       <View>
-        <View><List_searchinput value={this.state.value}/></View>
-        <View><List_tip data={this.state.list}/></View>
-        <View><List_panel data={this.state.list}/></View>
+        <View><List_searchinput value={this.state.value} /></View>
+        <View><List_tip data={this.state.list} /></View>
+        <View><List_panel data={this.state.list} /></View>
       </View>
 
     )
@@ -122,3 +119,10 @@ export default List
 // </View>
 // </View>
 // </li>
+
+
+// const data = [
+//   {name: 'AMERICAN LIGHTING INC', country: '美国', buyer_number: 15, mate_number: 83},
+//   {name: 'BBBBBBB', country: '英国', buyer_number: 5, mate_number: 25},
+//   {name: 'BBBBBBB', country: '英国', buyer_number: 5, mate_number: 25}
+// ];
