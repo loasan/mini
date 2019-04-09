@@ -20,11 +20,14 @@ class List extends Component {
   }
 
   componentWillMount() {
+    let data = company_server.get_list();
     this.setState(
-      {value: this.$router.params.value}
+      {value: this.$router.params.value,
+             list: data}
     );
 
-    company_server.get_list(this.onGetServerData.bind(this));
+    //company_server.get_list(this.onGetServerData.bind(this));
+
   }
 
   componentWillReceiveProps(nextProps) {
@@ -45,19 +48,19 @@ class List extends Component {
   componentDidHide() {
   }
 
-  onGetServerData(data){
-    this.setState(
-      {
-        list: data,
-      }
-    );
-  }
+  // onGetServerData(data){
+  //   this.setState(
+  //     {
+  //       list: data,
+  //     }
+  //   );
+  // }
 
   render() {
     return (
       <View>
         <View><List_searchinput value={this.state.value} /></View>
-        <View><List_tip data={this.state.list} /></View>
+        {/*<View><List_tip data={this.state.list} /></View>*/}
         <View><List_panel data={this.state.list} /></View>
       </View>
     )

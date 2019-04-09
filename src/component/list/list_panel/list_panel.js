@@ -19,6 +19,7 @@ export class List_panel extends Component{
   render() {
     return (
       <View className='list_panel'>
+        <View>13</View>
         <ul>
           {
             this.state.data.map((item) => {
@@ -27,13 +28,13 @@ export class List_panel extends Component{
                   <View className='row' onClick={this.skipToDetail.bind(this)}>
                     <Text className='name'>{item.name}</Text>
                     <View className='info'>
-                      <View className='country'><Text>{item.country}</Text></View>
+                      <View className='country'><Text>{item.location}</Text></View>
                       <View className='separate'><Text>|</Text></View>
                       <View className='type'><Text>供应商：</Text></View>
-                      <View><Text>{item.buyer_number}</Text></View>
+                      <View><Text>{item.shipmentSum}</Text></View>
                     </View>
                     <View>
-                      <View className='number'><Text>{item.mate_number}</Text></View>
+                      <View className='number'><Text>{item.partnerSum}</Text></View>
                       <View className='count'><Text>总匹配次数</Text></View>
                     </View>
                   </View>
