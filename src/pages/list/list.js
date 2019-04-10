@@ -16,14 +16,29 @@ class List extends Component {
     super(prop);
     this.state = {
       list: []
-    }
+    };
   }
 
-  componentWillMount() {
-    let data = company_server.get_list();
+
+  goo = async ()=>{
+    let source = await company_server.get_list();
+    console.log(source);
+    console.log(source.data.items);
     this.setState(
-      {value: this.$router.params.value,
-             list: data}
+      {
+        list: source.data.items}
+    );
+  };
+
+  componentWillMount() {
+    //let data = company_server.get_list();
+    //let sour = this.goo();
+    this.goo();
+    this.setState(
+      {
+        value: this.$router.params.value,
+        //list: sour.data.items
+      }
     );
 
     //company_server.get_list(this.onGetServerData.bind(this));

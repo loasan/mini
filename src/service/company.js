@@ -2,16 +2,20 @@ import axios from 'axios'
 
 export class company_server {
 
-  static get_list() {
-    let data;
-    axios.get('http://localhost:63342/untitled/led.json')
-      .then(function (response) {
-        console.log(response);
-        return data = response.items;
-      })
-      .catch(function (error) {
-        console.log(error);
-      });
+  static async get_list() {
+
+    return await axios.get('http://localhost:63342/untitled/led.json');
+    // let data;
+    // return new Promise((resolve, reject)=>{
+    //   axios.get('http://localhost:63342/untitled/led.json')
+    //     .then(function (response) {
+    //       console.log(response);
+    //       resolve(response.items);
+    //     })
+    //     .catch(function (error) {
+    //       reject(response.items);
+    //     });
+    // })
   }
 
   static get_detail() {
