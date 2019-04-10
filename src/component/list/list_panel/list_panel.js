@@ -6,10 +6,6 @@ import "./list_panel.scss"
 export class List_panel extends Component{
   constructor(props){
     super(props);
-
-    this.state={
-      data: this.props.data
-    }
   }
 
   skipToDetail(){
@@ -22,7 +18,7 @@ export class List_panel extends Component{
         <View>13</View>
         <ul>
           {
-            this.state.data.map((item) => {
+            this.props.data.map((item) => {
               return (
                 <li>
                   <View className='row' onClick={this.skipToDetail.bind(this)}>

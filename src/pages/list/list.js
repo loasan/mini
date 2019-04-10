@@ -22,11 +22,11 @@ class List extends Component {
 
   goo = async ()=>{
     let source = await company_server.get_list();
-    console.log(source);
-    console.log(source.data.items);
+
     this.setState(
       {
-        list: source.data.items}
+        list: source.data.items,
+      }
     );
   };
 
@@ -42,7 +42,6 @@ class List extends Component {
     );
 
     //company_server.get_list(this.onGetServerData.bind(this));
-
   }
 
   componentWillReceiveProps(nextProps) {
