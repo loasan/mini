@@ -15,10 +15,9 @@ export class List_panel extends Component{
   render() {
     return (
       <View className='list_panel'>
-        <View>13</View>
         <ul>
           {
-            this.props.data.map((item) => {
+            this.props.list.map((item) => {
               return (
                 <li>
                   <View className='row' onClick={this.skipToDetail.bind(this)}>

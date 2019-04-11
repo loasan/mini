@@ -1,21 +1,12 @@
 import axios from 'axios'
+//import {Search_searchinput} from "../component/search/search_searchinput/search_searchinput";
 
 export class company_server {
 
-  static async get_list() {
+  static async get_list(value) {
 
-    return await axios.get('http://localhost:63342/untitled/led.json');
-    // let data;
-    // return new Promise((resolve, reject)=>{
-    //   axios.get('http://localhost:63342/untitled/led.json')
-    //     .then(function (response) {
-    //       console.log(response);
-    //       resolve(response.items);
-    //     })
-    //     .catch(function (error) {
-    //       reject(response.items);
-    //     });
-    // })
+    //return await axios.get('http://localhost:3002/api/search?keyword=led');
+    return await axios.get('http://192.168.2.184:3002/api/search?keyword='+ value);
   }
 
   static get_detail() {

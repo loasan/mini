@@ -19,30 +19,26 @@ class List extends Component {
     };
   }
 
-
-  goo = async ()=>{
-    let source = await company_server.get_list();
+  componentWillMount() {
 
     this.setState(
       {
+        value: this.$router.params.value,
+      }
+    );
+    let temp = this.$router.params.value;
+    this.goo(temp);
+  }
+
+  goo = async (temp)=>{
+    let source = await company_server.get_list(temp);
+    this.setState(
+      {
+        number:source.data.total,
         list: source.data.items,
       }
     );
   };
-
-  componentWillMount() {
-    //let data = company_server.get_list();
-    //let sour = this.goo();
-    this.goo();
-    this.setState(
-      {
-        value: this.$router.params.value,
-        //list: sour.data.items
-      }
-    );
-
-    //company_server.get_list(this.onGetServerData.bind(this));
-  }
 
   componentWillReceiveProps(nextProps) {
     console.log(this.props, nextProps)
@@ -74,8 +70,8 @@ class List extends Component {
     return (
       <View>
         <View><List_searchinput value={this.state.value} /></View>
-        {/*<View><List_tip data={this.state.list} /></View>*/}
-        <View><List_panel data={this.state.list} /></View>
+        <View><List_tip number={this.state.number} /></View>
+        <View><List_panel list={this.state.list} /></View>
       </View>
     )
   }
@@ -147,3 +143,15 @@ export default List
 //   {name: 'BBBBBBB', country: '英国', buyer_number: 5, mate_number: 25},
 //   {name: 'BBBBBBB', country: '英国', buyer_number: 5, mate_number: 25}
 // ];
+
+
+// componentWillMount() {
+//   //let data = company_server.get_list();
+//   //let sour = this.goo();
+//   this.goo();
+//   this.setState(
+//     {
+//       value: this.$router.params.value,
+//       //list: sour.data.items
+//     }
+//   );
