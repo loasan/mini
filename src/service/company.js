@@ -5,8 +5,8 @@ export class company_server {
 
   static async get_list(value) {
 
-    //return await axios.get('http://localhost:3002/api/search?keyword=led');
-    return await axios.get('http://192.168.2.184:3002/api/search?keyword='+ value);
+    return await axios.get('http://localhost:63342/untitled/'+ value + '.json');
+    //return await axios.get('http://192.168.2.184:3002/api/search?keyword='+ value);
   }
 
   static get_detail() {

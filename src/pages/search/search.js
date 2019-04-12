@@ -30,7 +30,6 @@ class Search extends Component {
         <View><Search_searchinput onGetval={this.handle} /></View>
         <View><Search_tip /></View>
         <View><Search_panel value={this.state.value} /></View>
-        <View><Text>{this.state.value}</Text></View>
       </View>
     )
   }

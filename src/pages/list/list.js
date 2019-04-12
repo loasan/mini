@@ -27,10 +27,10 @@ class List extends Component {
       }
     );
     let temp = this.$router.params.value;
-    this.goo(temp);
+    this.onSearch(temp);
   }
 
-  goo = async (temp)=>{
+  onSearch = async (temp)=>{
     let source = await company_server.get_list(temp);
     this.setState(
       {
@@ -69,7 +69,7 @@ class List extends Component {
   render() {
     return (
       <View>
-        <View><List_searchinput value={this.state.value} /></View>
+        <View><List_searchinput searchValue={this.state.value} onSearch={this.onSearch} /></View>
         <View><List_tip number={this.state.number} /></View>
         <View><List_panel list={this.state.list} /></View>
       </View>

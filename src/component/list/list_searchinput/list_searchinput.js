@@ -6,9 +6,20 @@ export class List_searchinput extends Component{
   constructor(prop){
     super(prop);
     this.state={
-       value:this.props.value
+       value:this.props.searchValue
     }
   }
+
+  onclick_skip = () => {
+    this.props.onSearch(this.state.value);
+  };
+
+  inputHandler = (e) => {
+    const newValue = e.target.value;
+    this.setState({
+      value: newValue
+    });
+  };
 
   render () {
     return (
@@ -17,7 +28,8 @@ export class List_searchinput extends Component{
           <View className='icon-search'>
             <View className='at-icon at-icon-search' />
           </View>
-          <Input className='input' value={this.state.value} type='text' placeholder='请输入公司名称，仅支持英文' confirmType='search' />
+          <Input className='input' value={this.state.value} type='text' placeholder='请输入公司名称，仅支持英文'
+                 onConfirm={this.onclick_skip.bind(this)} onInput={this.inputHandler.bind(this)} confirmType='search' />
           <View className='at-icon at-icon-camera' />
         </View>
       </View>

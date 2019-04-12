@@ -38,9 +38,7 @@ export class Search_searchinput extends Component {
           <View className='icon-search'>
             <View className='at-icon at-icon-search' />
           </View>
-          <Input className='input' type='text' value={this.state.inputVal} placeholder='请输入公司名称，仅支持英文'
-                 onConfirm={this.onclick_skip.bind(this)} onInput={this.inputHandler.bind(this)} confirmType='search'
-                 focus />
+          <Input className='input' type='text' value={this.state.inputVal} placeholder='请输入公司名称，仅支持英文' onConfirm={this.onclick_skip.bind(this)} onInput={this.inputHandler.bind(this)} confirmType='search' focus />
           <View className='at-icon at-icon-camera' />
         </View>
       </View>
