@@ -4,7 +4,7 @@ import {Detail_basic} from "../../component/detail/detail_basic/detail_basic";
 import {Detail_trade} from "../../component/detail/detail_trade/detail_trade";
 
 
-class Detail extends Component {
+export class Detail extends Component {
 
   config = {
     navigationBarTitleText: '商情发现'
@@ -30,4 +30,3 @@ class Detail extends Component {
   }
 }
 
-export default Detail

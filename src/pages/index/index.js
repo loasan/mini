@@ -1,5 +1,6 @@
 import Taro, { Component } from '@tarojs/taro'
-import { View, Button, Text } from '@tarojs/components'
+import { View, Text } from '@tarojs/components'
+import {Tabbar} from '../../component/common/tabbar'
 
 import './index.scss'
 
@@ -36,6 +37,7 @@ class Index extends Component {
             <View className='at-icon at-icon-camera' />
           </View>
         </View>
+        <Tabbar />
       </View>
     )
   }
